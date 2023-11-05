@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package test;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./test";
+
+// Test
+message Test {
+  string id = 1;
+  google.protobuf.Timestamp create_time = 2;
+}
+
+message Test2 {
+  Nested nested = 1;
+  message Nested {
+    string value = 1;
+  }
+}
